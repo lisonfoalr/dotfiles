@@ -352,6 +352,7 @@ verify_os() {
 
     declare -r MINIMUM_MACOS_VERSION="10.10"
     declare -r MINIMUM_UBUNTU_VERSION="14.04"
+    declare -r MINIMUM_FEDORA_VERSION="29"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -379,6 +380,20 @@ verify_os() {
             return 0
         else
             printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
+        fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if the OS is `Fedora` and
+    # it's above the required version.
+
+    elif [ "$(get_os)" == "fedora" ]; then
+
+        if is_supported_version "$(get_os_version)" "$MINIMUM_FEDORA_VERSION"; then
+
+            return 0
+        else
+            printf "Sorry, this script is intended only for Fedora %s+" "$MINIMUM_FEDORA_VERSION"
         fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
