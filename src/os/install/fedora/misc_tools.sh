@@ -9,12 +9,12 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Miscellaneous Tools\n\n"
 
 install_package "cURL" "curl"
-install_package "ShellCheck" "shellcheck"
+install_package "ShellCheck" "ShellCheck"
 install_package "xclip" "xclip"
 
 if [ -d "$HOME/.nvm" ]; then
 
-    if ! package_is_installed "yarn"; then
+    #if ! package_is_installed "yarn"; then
 
        # add_key "https://dl.yarnpkg.com/debian/pubkey.gpg" \
        #     || print_error "Yarn (add key)"
@@ -25,7 +25,7 @@ if [ -d "$HOME/.nvm" ]; then
        # update &> /dev/null \
        #     || print_error "Yarn (resync package index files)"
 
-    fi
+    #fi
 
-    install_package "Yarn" "yarn"
+    install_package "Yarn" "nodejs-yarn"
 fi

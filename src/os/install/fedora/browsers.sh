@@ -10,7 +10,7 @@ print_in_purple "\n   Browsers\n\n"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-install_package "Chrome Canary" "google-chrome-unstable"
+#install_package "Chrome Canary" "google-chrome-unstable"
 install_package "Chromium" "chromium"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
